@@ -1,18 +1,18 @@
 ---
 driver:
-  name: vagrant
+  name: docker
+  privileged: true
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
+  require_chef_omnibus: 11.16.4
+  attributes:
+    test-kitchen: true
 
 platforms:
   - name: ubuntu-14.04
-  - name: centos-7.1
 
 suites:
   - name: default
     run_list:
-
-      - recipe[sampletest::default]
-
-    attributes:
+      - recipe[sample_test]
