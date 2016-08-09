@@ -2,6 +2,7 @@
 driver:
   name: docker
   privileged: true
+  binary: docker.io
 
 provisioner:
   name: chef_zero
